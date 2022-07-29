@@ -854,6 +854,7 @@ address {
   margin-left: 40px;
   margin-right: 40px;
   margin-top: 10px;
+  transition: border-color 250ms var(--cubic-animation);
 }
 
 .modal-form-label {
@@ -872,6 +873,16 @@ address {
   border-radius: 4px;
   cursor: pointer;
   padding-left: 42px;
+  outline: currentColor;
+  transition: border-color 250ms var(--cubic-animation);
+}
+
+.field-contact:focus {
+  outline: var(--accent-color);
+}
+
+.modal-form-contact:focus-within .field-contact {
+  border: 1px solid var(--accent-color);
 }
 
 .icon-name {
@@ -881,11 +892,11 @@ address {
   transform: translateY(-50%);
   display: inline-block;
   fill: var(--secondary-text-color);
+  transition: fill 250ms var(--cubic-animation);
 }
 
 .field-contact:focus ~ .icon-name {
   fill: var(--accent-color);
-  border-color: var(--head-button-bgr-color);
 }
 
 .comments {
@@ -941,5 +952,13 @@ address {
   line-height: 1.88;
   letter-spacing: 0.06em;
   color: var(--head-text-color);
+  transition: border-color 250ms var(--cubic-animation);
   cursor: pointer;
+}
+
+.accept-btn:hover,
+.accept-btn:focus {
+  background: var(--hover-btn-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
